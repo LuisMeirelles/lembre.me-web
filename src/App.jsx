@@ -1,27 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+
+import brand from './assets/img/brand.svg';
 
 const App = () => {
 	return (
-		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
+		<div className="container">
+			<nav>
+				<a href="#">SAIBA MAIS</a>
+				<a href="#">LOGIN</a>
+			</nav>
+			<main>
+				<img src={brand} alt="Logo"></img>
+			</main>
 
-				<p>
-					Edit <code>src/App.js</code> and save to reload.
-				</p>
-
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Learn React
-				</a>
-			</header>
 		</div>
+
 	);
 };
 
