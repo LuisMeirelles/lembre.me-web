@@ -1,34 +1,59 @@
-:root {
-	--color-primary: #e74c3c;
-}
-
 .container {
 	height: 100vh;
+	width: 90%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 1.5rem 5rem;
+	padding-top: 1.5rem;
 }
 
 nav {
 	width: 100%;
 	display: flex;
-	justify-content: flex-end;
-	font-size: 1.75rem;
+	justify-content: space-between;
 }
 
-nav > a {
+nav a {
 	text-decoration: none;
+	padding: 0 0.5rem;
 	color: var(--color-primary);
-	font-weight: bold;
-}
-
-nav a:first-of-type {
-	margin-right: 2.5rem;
+	font: bold 1.5rem 'Roboto Mono', monospace;
+	border-radius: 5px;
+	transition: background-color 0.5s, color 0.5s;
 }
 
 main {
+	width: 100%;
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	flex: 1;
+}
+
+main>img {
+	width: 100%;
+}
+
+@media (min-width: 768px) {
+	nav {
+		justify-content: flex-end;
+	}
+
+	nav a {
+		font-size: 1.75rem;
+	}
+
+	nav a+a {
+		margin-left: 2.5rem;
+	}
+
+	nav a:hover {
+		background-color: var(--color-primary);
+		color: white;
+	}
+
+	main>img {
+		width: initial;
+	}
 }
