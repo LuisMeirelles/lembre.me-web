@@ -2,6 +2,6 @@
 	"editor.insertSpaces": false,
 	"javascript.format.semicolons": "insert",
 	"files.autoSave": "afterDelay",
-	"files.autoSaveDelay": 1000,
+	"files.autoSaveDelay": 600,
 	"files.eol": "\r\n"
 }
