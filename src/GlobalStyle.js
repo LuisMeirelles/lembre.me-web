@@ -16,15 +16,17 @@ const GlobalStyle = createGlobalStyle`
 	html,
 	body,
 	#root {
-		height: 100vh;
+		min-height: 100vh;
 		width: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	}
 
-	body {
-		margin: 0;
+	body,
+	input,
+	textarea,
+	button {
 		font-family: 'Roboto Mono', monospace;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;

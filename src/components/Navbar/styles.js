@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.nav`
 	width: 100%;
@@ -18,12 +18,14 @@ export const NavItem = styled(Link)`
 	border-radius: 5px;
 	color: var(--color-primary);
 	transition: background-color 0.2s, color 0.2s;
+
 	&:hover,
 	&:focus,
 	&:active {
 			background-color: var(--color-primary);
 			color: white;
 	}
+
 	@media (min-width: 768px) {
 		font-size: 1.75rem;
 

@@ -1,15 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-import { Container } from './styles';
+import {
+	Container,
+	LinkLogo
+} from './styles';
 
-import brand from '../../assets/img/brand.svg';
+import logo from '../../assets/img/logo.svg';
 
 const Header = () => (
 	<Container>
-		<Link to="/">
-			<img src={brand} alt="Logo" />
-		</Link>
+		<LinkLogo to="/">
+			<img src={logo} alt="Logo" />
+		</LinkLogo>
 	</Container>
 );
 

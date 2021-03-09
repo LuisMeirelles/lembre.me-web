@@ -7,7 +7,7 @@ import {
 
 import Navbar from '../../components/Navbar';
 
-import brand from '../../assets/img/brand.svg';
+import logo from '../../assets/img/logo.svg';
 
 const Landing = () => {
 	return (
@@ -16,7 +16,7 @@ const Landing = () => {
 				text: 'SAIBA MAIS',
 				path: '/more',
 				key: 'saibaMais'
-			}, 
+			},
 			{
 				text:'LOGIN',
 				path:'/login',
@@ -24,7 +24,7 @@ const Landing = () => {
 			}]} />
 
 			<Main>
-				<img src={brand} alt="Logo" />
+				<img src={logo} alt="Logo" />
 			</Main>
 		</Container>
 	);

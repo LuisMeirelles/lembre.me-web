@@ -3,14 +3,14 @@ import React from 'react';
 import {
 	Container,
 	Main,
+	Form,
 	ContainerBotao,
 	BotaoCriarConta
 } from './styles';
 
-import InputBlock from '../../components/InputBlock';
 import Header from '../../components/Header';
+import Input from '../../components/Input';
 import Button from '../../components/Button';
-import Form from '../../components/Form';
 
 
 const Login = () => (
@@ -19,11 +19,11 @@ const Login = () => (
 
 		<Main>
 			<Form>
-				<InputBlock type="text" placeholder="USUÁRIO" />
-				<InputBlock type="password" placeholder="SENHA" />
+				<Input type="text" placeholder="USUÁRIO" />
+				<Input type="password" placeholder="SENHA" />
 
 				<ContainerBotao>
-					<Button text="ENTRAR" type="submit" />
+					<Button type="submit">ENTRAR</Button>
 				</ContainerBotao>
 
 				<BotaoCriarConta to="/criar-conta">CRIAR CONTA</BotaoCriarConta>

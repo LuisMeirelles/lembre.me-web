@@ -1,11 +1,11 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 
-import {Botao} from './styles';
+import { Botao } from './styles';
 
-const Button = ({text, ...rest}) => (
-	<Botao {...rest} >{text}</Botao>
-
+const Button = ({ children, ...rest }) => (
+	<Botao {...rest}>
+		{children}
+	</Botao>
 );
 
 export default Button;

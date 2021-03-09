@@ -1,29 +1,41 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
-	height: 100vh;
+	min-height: 100vh;
 	width: 90%;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
 	padding-top: 1.5rem;
 `;
 
-export const Main = styled.main`
+export const Main = styled.div`
 	width: 100%;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
 	flex: 1;
 `;
 
 export const Form = styled.form`
-	display: flex;
+	width: 100%;
+	display:flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	justify-content:center;
+	align-items:center;
+
+	@media (min-width: 768px){
+		display:grid;
+		grid-template-columns: 1fr 1fr;
+
+		&& > div {
+			justify-self: center;
+			align-self: center;
+
+			&,
+			button {
+				margin: 0;
+			}
+		}
+	}
 `;
 
 export const ContainerBotao = styled.div`
@@ -55,27 +67,5 @@ export const ContainerBotao = styled.div`
 
 	@media(min-width: 768px){
 		width: 20rem;
-	}
-`;
-
-export const BotaoCriarConta = styled(Link)`
-	font-weight: bold;
-	font-size: 1.5rem;
-	border-radius: 10px;
-	color: var(--color-primary);
-	transition: background-color 0.2s, color 0.2s;
-
-	&:hover,
-	&:focus,
-	&:active {
-		color: var(--color-secondary);
-	}
-
-	@media (min-width: 768px) {
-		font-size: 1.75rem;
-
-		& + & {
-			margin-left: 2.5rem;
-		}
 	}
 `;

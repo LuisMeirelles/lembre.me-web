@@ -3,5 +3,10 @@
 	"javascript.format.semicolons": "insert",
 	"files.autoSave": "afterDelay",
 	"files.autoSaveDelay": 600,
-	"files.eol": "\r\n"
+	"files.eol": "\r\n",
+	"editor.codeActionsOnSave": {
+		"source.fixAll": true,
+		"source.organizeImports": true
+	},
+	"editor.formatOnSave": true
 }

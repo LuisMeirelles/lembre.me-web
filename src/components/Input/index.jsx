@@ -2,13 +2,13 @@ import React from 'react';
 
 import {
 	Container,
-	Input
+	Input as StyledInput
 } from './styles.js';
 
-const InputBlock = props => (
+const Input = props => (
 	<Container>
-		<Input {...props} />
+		<StyledInput {...props} />
 	</Container>
 );
 
-export default InputBlock;
+export default Input;
