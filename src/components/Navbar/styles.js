@@ -1,10 +1,16 @@
-import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 export const Container = styled.nav`
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
+
+	a + & {
+		width: 80%;
+		justify-content: flex-end;
+	}
 
 	@media (min-width: 768px) {
 		justify-content: flex-end;

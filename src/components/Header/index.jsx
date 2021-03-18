@@ -7,11 +7,13 @@ import {
 
 import logo from '../../assets/img/logo.svg';
 
-const Header = () => (
+const Header = ({ children }) => (
 	<Container>
 		<LinkLogo to="/">
 			<img src={logo} alt="Logo" />
 		</LinkLogo>
+
+		{children}
 	</Container>
 );
 

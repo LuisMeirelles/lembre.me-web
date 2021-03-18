@@ -5,6 +5,8 @@ export const Container = styled.header`
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	margin-bottom: 1.5rem;
 
 	@media (min-width: 768px) {
 		justify-content: flex-start;

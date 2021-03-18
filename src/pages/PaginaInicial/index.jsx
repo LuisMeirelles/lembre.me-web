@@ -14,7 +14,7 @@ const Landing = () => {
 		<Container>
 			<Navbar items={[ {
 				text: 'SAIBA MAIS',
-				path: '/more',
+				path: '/saiba-mais',
 				key: 'saibaMais'
 			},
 			{

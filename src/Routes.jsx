@@ -1,13 +1,12 @@
 import React from 'react';
 import {
-	Switch,
-	Route
+	Route, Switch
 } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
-
-import PaginaInicial from './pages/PaginaInicial';
-import Login from './pages/Login';
 import CriarConta from './pages/CriarConta';
+import Login from './pages/Login';
+import PaginaInicial from './pages/PaginaInicial';
+
 
 const Routes = () => (
 	<BrowserRouter>

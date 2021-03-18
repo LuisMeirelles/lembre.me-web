@@ -46,7 +46,7 @@ export const ContainerBotao = styled.div`
 	}
 
 	&:hover,
-	&:focus {
+	&:focus-within {
 		button {
 			transform: translate(-10px, -10px);
 		}
@@ -66,7 +66,7 @@ export const BotaoCriarConta = styled(Link)`
 	transition: background-color 0.2s, color 0.2s;
 
 	&:hover,
-	&:focus,
+	&:focus-within,
 	&:active {
 		color: var(--color-secondary);
 	}

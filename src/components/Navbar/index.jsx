@@ -1,13 +1,13 @@
 import React from 'react';
-
 import {
 	Container,
 	NavItem
 } from './styles.js';
 
+
 const Navbar = ({ items }) => (
 	<Container>
-		{items.map(item => (
+		{items.map((item) => (
 			<NavItem key={item.key} to={item.path}>
 				{item.text}
 			</NavItem>

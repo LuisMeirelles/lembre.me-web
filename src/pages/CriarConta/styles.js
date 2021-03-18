@@ -22,20 +22,6 @@ export const Form = styled.form`
 	justify-content:center;
 	align-items:center;
 
-	@media (min-width: 768px){
-		display:grid;
-		grid-template-columns: 1fr 1fr;
-
-		&& > div {
-			justify-self: center;
-			align-self: center;
-
-			&,
-			button {
-				margin: 0;
-			}
-		}
-	}
 `;
 
 export const ContainerBotao = styled.div`
@@ -58,7 +44,7 @@ export const ContainerBotao = styled.div`
 	}
 
 	&:hover,
-	&:focus {
+	&:focus-within {
 		button {
 			transform: translate(-10px, -10px);
 		}
@@ -67,5 +53,44 @@ export const ContainerBotao = styled.div`
 
 	@media(min-width: 768px){
 		width: 20rem;
+	}
+`;
+
+export const ErrorContainer = styled.div`
+	margin-top: 1.5rem;
+	text-align: center;
+	width: clamp(25rem, 40%, 500px);
+
+	@media (min-width: 768px) {
+		width: 90%;
+	}
+`;
+
+export const BotaoVoltar = styled.button`
+	font-weight: bold;
+	font-size: 1.5rem;
+	padding: 0 0.5rem;
+	border-radius: 5px;
+	color: var(--color-primary);
+	transition: background-color 0.2s, color 0.2s;
+	margin-left: auto;
+	background: none;
+	border: none;
+	cursor: pointer;
+	height: fit-content;
+
+	&:hover,
+	&:focus-within,
+	&:active {
+			background-color: var(--color-primary);
+			color: white;
+	}
+
+	@media (min-width: 768px) {
+		font-size: 1.75rem;
+
+		& + & {
+			margin-left: 2.5rem;
+		}
 	}
 `;
