@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../../components/Button';
+import Erro from '../../components/Erro';
 import Header from '../../components/Header';
 import Input from '../../components/Input';
 import Navbar from '../../components/Navbar';
@@ -11,6 +12,8 @@ import {
 	Form,
 	Main
 } from './styles';
+
+
 
 
 const CriarConta = () => {
@@ -33,19 +36,27 @@ const CriarConta = () => {
 	const [idadeValida, setIdadeValida] = useState(true);
 
 
+	const [camposVazios, setCamposVazios] = useState(true);
+
+
 	const proximo = (e) => {
 		e.preventDefault();
+
+		camposEmBranco();
 
 		const $usuarioValido = validaUsuario();
 		const $senhaValida = validaSenha();
 
 		if ($senhaValida && $usuarioValido) {
 			setFormulario(formulario + 1);
+			setCamposVazios(true);
 		}
 	};
 
 	const criaConta = (e) => {
 		e.preventDefault();
+
+		camposEmBranco();
 
 		const $emailValido = validaEmail();
 		const $nomeValido = validaNome();
@@ -78,7 +89,7 @@ const CriarConta = () => {
 
 	const validaEmail = () => {
 		const validacaoEmail = compararRegex(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/, email);
-		console.log(`validacaoEmail: ${validacaoEmail}`);
+
 		setEmailValido(validacaoEmail);
 
 		return validacaoEmail;
@@ -98,6 +109,16 @@ const CriarConta = () => {
 		setIdadeValida(validacaoIdade);
 
 		return validacaoIdade;
+	};
+
+	const camposEmBranco = () => {
+		if (formulario == 1 && (usuario === '' || senha === ''))
+			setCamposVazios(true);
+		else if (formulario == 2 && (email === '' || idade == '' || nome === '')) {
+			setCamposVazios(true);
+		} else {
+			setCamposVazios(false);
+		}
 	};
 
 	return (
@@ -141,24 +162,36 @@ const CriarConta = () => {
 						/>
 
 						<ErrorContainer>
-							{!usuarioValido && (
-								<p style={{ color: 'red', fontWeight: 'bolder' }}>USUÁRIO INVÁLIDO</p>
-							)}
+							{camposVazios ?
+								<Erro titulo="TODOS OS CAMPOS DEVEM SER PREENCHIDOS." />
+								: (
 
-							{!senhaValida && (
-								<>
-									<p style={{ color: 'red', fontWeight: 'bolder' }}>SENHA INVÁLIDA</p>
-									<p style={{ color: 'gray' }}>
-										As senhas devem ter pelo menos 8 caracteres, contendo no mínimo uma letra maíuscula, uma letra mínuscula, um número e um caractere especial (ex: !@#).
-										</p>
-								</>
-							)}
+									!usuarioValido && (
+										<Erro
+											titulo="USUÁRIO INVÁLIDO"
+										/>
+									) ||
 
-							{!senhasCoincidem && (
-								<p style={{ color: 'red', fontWeight: 'bolder' }}>AS SENHAS NÃO COINCIDEM</p>
-							)}
+									!senhaValida && (
+										<Erro
+											titulo="SENHA INVÁLIDA"
+											descricao="As senhas devem ter pelo menos 8 caracteres, contendo no mínimo uma letra maíuscula,
+													uma letra mínuscula, um número e um caractere especial (ex: !@#)."
+										/>
+
+									) ||
+
+									!senhasCoincidem && (
+										<Erro
+											titulo="AS SENHAS NÃO COINCIDEM"
+										/>
+									)
+								)
+							}
 
 						</ErrorContainer>
+
+
 
 						<ContainerBotao>
 							<Button type="submit">PRÓXIMO</Button>
@@ -190,17 +223,31 @@ const CriarConta = () => {
 						/>
 
 						<ErrorContainer>
-							{!emailValido && (
-								<p style={{ color: 'red', fontWeight: 'bolder' }}>EMAIL INVÁLIDO</p>
-							)}
+							{camposVazios ?
+								<Erro titulo="TODOS OS CAMPOS DEVEM SER PREENCHIDOS." />
+								: (
+									!emailValido && (
+										<Erro
+											titulo="EMAIL INVÁLIDO"
+										/>
+									) ||
 
-							{!nomeValido && (
-								<p style={{ color: 'red', fontWeight: 'bolder' }}>NOME INVÁLIDO</p>
-							)}
+									!nomeValido && (
+										<Erro
+											titulo="NOME INVÁLIDO"
+										/>
 
-							{!idadeValida && (
-								<p style={{ color: 'red', fontWeight: 'bolder' }}>IDADE INVÁLIDA</p>
-							)}
+									) ||
+
+									!idadeValida && (
+										<Erro
+											titulo="IDADE INVÁLIDA"
+										/>
+									)
+								)
+							}
+
+
 						</ErrorContainer>
 
 						<ContainerBotao>

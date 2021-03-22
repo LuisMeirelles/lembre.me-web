@@ -57,9 +57,11 @@ export const ContainerBotao = styled.div`
 `;
 
 export const ErrorContainer = styled.div`
-	margin-top: 1.5rem;
-	text-align: center;
+	margin: 1.5rem 0;
 	width: clamp(25rem, 40%, 500px);
+	display:flex;
+	flex-direction: column;
+	align-items:center;
 
 	@media (min-width: 768px) {
 		width: 90%;
