@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from '../../components/Button';
 import Erro from '../../components/Erro';
 import Header from '../../components/Header';
@@ -35,6 +35,11 @@ const CriarConta = () => {
 	const [nomeValido, setNomeValido] = useState(true);
 	const [idadeValida, setIdadeValida] = useState(true);
 
+	const [items, setItems] = useState([{
+		key: 'voltar',
+		path: '/login',
+		text: 'VOLTAR'
+	}]);
 
 	const [camposVazios, setCamposVazios] = useState(true);
 
@@ -121,20 +126,32 @@ const CriarConta = () => {
 		}
 	};
 
+	useEffect(() => {
+		if (formulario !== 1) {
+			setItems([{
+				key: '',
+				path: '',
+				text: ''
+			}]);
+		} else {
+			setItems([{
+				key: 'voltar',
+				path: '/login',
+				text: 'VOLTAR'
+			}]);
+		}
+	}, [formulario]);
+
 	return (
 		<Container>
 			<Header>
-				{formulario == 1 && (
-					<Navbar items={[{
-						key: 'voltar',
-						path: '/login',
-						text: 'VOLTAR'
-					}]} />
-				)}
 
-				{formulario > 1 && (
-					<BotaoVoltar onClick={() => setFormulario(formulario - 1)}>VOLTAR</BotaoVoltar>
-				)}
+				<Navbar items={items}>
+					{formulario > 1 && (
+						<BotaoVoltar onClick={() => setFormulario(formulario - 1)}>VOLTAR</BotaoVoltar>
+					)}
+				</Navbar>
+
 			</Header>
 
 			<Main>

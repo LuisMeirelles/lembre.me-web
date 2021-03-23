@@ -5,13 +5,15 @@ import {
 } from './styles.js';
 
 
-const Navbar = ({ items }) => (
+const Navbar = ({ items, children }) => (
 	<Container>
 		{items.map((item) => (
 			<NavItem key={item.key} to={item.path}>
 				{item.text}
 			</NavItem>
 		))}
+
+		{children}
 	</Container>
 );
 
